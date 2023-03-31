@@ -14,12 +14,19 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         binding.btnService.setOnClickListener {
-            startService(MyService.getIntent(this))
+            stopService(MyForegroundService.getIntent(this))
         }
         binding.btnForegroundService.setOnClickListener {
             ContextCompat.startForegroundService(
                 this,
                 MyForegroundService.getIntent(this)
+            )
+        }
+
+        binding.btnIntentService.setOnClickListener {
+            ContextCompat.startForegroundService(
+                this,
+                MyIntentService.getIntent(this)
             )
         }
     }
