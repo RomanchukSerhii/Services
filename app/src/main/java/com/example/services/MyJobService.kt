@@ -40,12 +40,10 @@ class MyJobService : JobService() {
     }
 
     private fun log(message: String) {
-        Log.d("SERVICE_TAG", "MyService: $message")
+        Log.d("SERVICE_TAG", "MyJobService: $message")
     }
 
     companion object {
-        fun getIntent(context: Context): Intent {
-            return Intent(context, MyJobService::class.java)
-        }
+        const val JOB_ID = 111
     }
 }
